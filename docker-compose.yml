@@ -1,0 +1,15 @@
+services:
+  b3api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: b3quotes_api
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - sqlite_data:/app/data
+
+volumes:
+  sqlite_data:
